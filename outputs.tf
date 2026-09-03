@@ -117,3 +117,13 @@ output "application_inference_profile_arn" {
   description = "The ARN of the application inference profile."
   value       = var.create_app_inference_profile ? awscc_bedrock_application_inference_profile.application_inference_profile[0].inference_profile_arn : null
 }
+
+output "prompt" {
+  description = "The ARN of the Prompt"
+  value = var.create_prompt ? awscc_bedrock_prompt.prompt : null
+}
+
+output "prompt_version" {
+  description = "The version of the prompt"
+  value = var.create_prompt_version ? awscc_bedrock_prompt_version.prompt_version : null
+} 
